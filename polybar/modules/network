@@ -1,0 +1,19 @@
+[module/wireless-network]
+type = internal/network
+interface = wlp8s0
+
+label-connected = "直 "
+label-connected-foreground = ${colors.green}
+label-disconnected = "睊 "
+label-disconnected-foreground = ${colors.red}
+
+[module/wired-network]
+type = internal/network
+interface = enp9s0
+
+label-connected = 
+label-connected-foreground = ${colors.green}
+label-disconnected = 
+label-disconnected-foreground = ${colors.red}
+
+; vim:ft=dosini

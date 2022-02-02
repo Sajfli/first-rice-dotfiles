@@ -1,0 +1,31 @@
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT1
+adapter = ACAD
+
+poll-interval = 5
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> %{F-}<label-discharging>
+
+label-charging = "%percentage%%"
+label-discharging = "%percentage%%"
+label-full = %{F#2fed4f} 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+ramp-capacity-0 = %{F#ed3c2f}
+ramp-capacity-1 = %{F#ed9b2f}
+ramp-capacity-2 = %{F#daed2f}
+ramp-capacity-3 = %{F#abed2f} 
+ramp-capacity-4 = %{F#2fed4f}
+
+; vim:ft=dosini

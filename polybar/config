@@ -1,0 +1,48 @@
+include-file = $HOME/.config/polybar/modules/i3
+include-file = $HOME/.config/polybar/modules/battery
+include-file = $HOME/.config/polybar/modules/pulseaudio
+include-file = $HOME/.config/polybar/modules/network
+
+[bar/mybar]
+
+background = ${colors.background}
+
+modules-left = i3
+modules-center = date
+modules-right = wireless-network wired-network pulseaudio-control battery
+
+tray-position = right
+tray-padding = 5
+padding-right = 2
+
+font-0 = "Fira Code:size=10;2" 
+font-1 = "Symbols Nerd Font;3"
+
+line-size = 2
+
+[colors]
+font = ${xrdb:color7}
+font2 = ${xrdb:color5}
+font3 = ${xrdb:color14}
+
+accent = ${xrdb:color11}
+
+red = ${xrdb:color6}
+green = ${xrdb:color13}
+
+background = #0009
+background2 = #8f3f3f3f
+
+[module/date]
+type = internal/date
+
+time = %H:%M
+time-alt = %H:%M %d-%m
+
+interval = 1.0
+
+format =  <label>
+
+label = %time%
+
+; vim:ft=dosini
