@@ -9,7 +9,9 @@ label-disconnected-foreground = ${colors.red}
 
 [module/wired-network]
 type = internal/network
-interface = enp9s0
+
+; interface = en9s0
+interface = enp4s0
 
 label-connected = 
 label-connected-foreground = ${colors.green}

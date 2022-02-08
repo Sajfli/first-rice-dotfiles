@@ -178,10 +178,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # wallpaper
-exec_always --no-startup-id feh --randomize --no-fehbg --bg-max ~/Pictures/wallpapers/current/
+#exec_always --no-startup-id feh --randomize --no-fehbg --bg-max ~/Pictures/wallpapers/current/
+#exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpapers/nwm,.jpg --bg-fill ~/Pictures/wallpapers/arizona.jpg
+exec_always --no-startup-id sleep 1 && nitrogen --restore
+
+set $wallpaper $(cat /home/sajmon/.config/nitrogen/bg-saved.cfg | grep file | head -1 | cut -d "=" -f2)
 
 # pywal
-exec_always --no-startup-id wal -i ~/Pictures/wallpapers/current/ -q
+exec_always --no-startup-id wal -i $wallpaper -q
 
 # remove borders
 default_border pixel 0
@@ -194,10 +198,19 @@ smart_gaps inverse_outer
 gaps inner 8
 
 # launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 1 && /home/sajmon/.config/polybar/launch.sh
 
 # launch picom
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 
 # exec xres
 exec_always xrdb $HOME/.Xresources
+
+# set kb layout
+exec setxkbmap -layout pl,us
+exec setxkbmap -option 'grp:alt_shift_toggle'
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left
+

@@ -58,9 +58,9 @@ label-unfocused-foreground = ${colors.font}
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-visible = %index%
-label-visible-underline = #555555
+label-visible = %icon%
 label-visible-padding = 2
+label-visible-foreground = ${colors.accent}
 
 ; Available tokens:
 ;   %name%

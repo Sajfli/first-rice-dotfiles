@@ -5,6 +5,8 @@ include-file = $HOME/.config/polybar/modules/network
 
 [bar/mybar]
 
+monitor = ${env:MONITOR:}
+
 background = ${colors.background}
 
 modules-left = i3
